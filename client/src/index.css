@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 11% 98%; /* #F5F7FA */
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 157 69% 38%; /* Islamic Green #2E8B57 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 48 100% 50%; /* Golden #FFD700 */
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* Islamic theme colors */
+  --islamic-green: 157 69% 38%; /* #2E8B57 */
+  --royal-blue: 225 73% 57%; /* #4169E1 */
+  --golden: 48 100% 50%; /* #FFD700 */
+  --coral: 356 70% 68%; /* #FF6B6B */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 157 69% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 48 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, rgb(239 246 255) 0%, rgb(240 253 244) 50%, rgb(254 249 195) 100%);
+    min-height: 100vh;
+  }
+  
+  .font-amiri {
+    font-family: 'Amiri', serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-islamic-green {
+    color: hsl(var(--islamic-green));
+  }
+  
+  .bg-islamic-green {
+    background-color: hsl(var(--islamic-green));
+  }
+  
+  .border-islamic-green {
+    border-color: hsl(var(--islamic-green));
+  }
+  
+  .text-royal-blue {
+    color: hsl(var(--royal-blue));
+  }
+  
+  .bg-royal-blue {
+    background-color: hsl(var(--royal-blue));
+  }
+  
+  .border-royal-blue {
+    border-color: hsl(var(--royal-blue));
+  }
+  
+  .text-golden {
+    color: hsl(var(--golden));
+  }
+  
+  .bg-golden {
+    background-color: hsl(var(--golden));
+  }
+  
+  .border-golden {
+    border-color: hsl(var(--golden));
+  }
+  
+  .text-coral {
+    color: hsl(var(--coral));
+  }
+  
+  .bg-coral {
+    background-color: hsl(var(--coral));
+  }
+  
+  .border-coral {
+    border-color: hsl(var(--coral));
+  }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { 
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% { 
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { 
+    opacity: 1;
+  }
+  50% { 
+    opacity: 0.8;
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
+.game-card {
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.star-rating {
+  filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+}
